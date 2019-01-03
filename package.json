@@ -1,0 +1,23 @@
+{
+  "name": "skanetrafiken-api-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "openapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Makanz/skanetrafiken-api-nodejs.git"
+  },
+  "author": "Marcus Alsterfjord",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Makanz/skanetrafiken-api-nodejs/issues"
+  },
+  "homepage": "https://github.com/Makanz/skanetrafiken-api-nodejs#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "xml-js": "^1.6.8"
+  }
+}
