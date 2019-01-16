@@ -12,12 +12,13 @@ axios.get('http://www.labs.skanetrafiken.se/v2.2/stationresults.asp?selPointFrKe
       compact: true,
       spaces: 4
     }));
+    
     json = json["soap:Envelope"]["soap:Body"].GetDepartureArrivalResponse.GetDepartureArrivalResult.Lines.Line;
 
     var busstop = json.filter(bus => {
         return bus.No._text === busNumber && bus.StopPoint._text === busDirection
       }).map(bus => {
-        let diffTime = (bus.RealTime.RealTimeInfo !== undefined && bus.RealTime.RealTimeInfo.DepTimeDeviation._text !== '') ? bus.RealTime.RealTimeInfo.DepTimeDeviation._text : '0';
+        let diffTime = (bus.RealTime.RealTimeInfo !== undefined && bus.RealTime.RealTimeInfo.DepTimeDeviation._text !== '') ? bus.RealTime.RealTimeInfo.DepTimeDeviation._text : 0;
         return {
           Name: bus.Name._text,
           No: bus.No._text,
